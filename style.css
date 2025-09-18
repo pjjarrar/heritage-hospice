@@ -322,6 +322,54 @@ body {
     transform: scale(1.02);
 }
 
+/* Page Hero Sections */
+.about-hero,
+.healthcare-hero,
+.services-hero {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    background: linear-gradient(135deg, rgba(28, 44, 76, 0.8), rgba(47, 125, 124, 0.8)), url('assets/health-care-professionals.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 120px;
+}
+
+.about-hero__overlay,
+.healthcare-hero__overlay,
+.services-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 44, 76, 0.6);
+}
+
+.about-hero__content,
+.healthcare-hero__content,
+.services-hero__content {
+    position: relative;
+    z-index: 1;
+    color: #ffffff;
+}
+
+.about-hero__content h1,
+.healthcare-hero__content h1,
+.services-hero__content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.about-hero__content p,
+.healthcare-hero__content p,
+.services-hero__content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
 /* Contact Hero */
 .contact-hero {
     position: relative;
@@ -1199,5 +1247,581 @@ body {
     
     .social-links {
         justify-content: center;
+    }
+}
+
+/* Page-specific content styles */
+.our-story,
+.mission-values,
+.leadership-team,
+.accreditation,
+.our-team,
+.referral-process,
+.eligibility-criteria,
+.professional-resources,
+.core-services,
+.specialized-services,
+.care-team,
+.coverage-payment {
+    padding: 4rem 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.our-story {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    background-color: #f8f9fa;
+}
+
+.story-content {
+    flex: 1;
+}
+
+.story-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.story-content p {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+.story-image {
+    flex: 1;
+}
+
+.story-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-values {
+    background-color: #ffffff;
+}
+
+.mission-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.value-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.value-card h3 {
+    color: #1C2C4C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.value-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.leadership-team {
+    background-color: #f8f9fa;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.team-header h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h3 {
+    color: #1C2C4C;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.member-title {
+    color: #2F7D7C;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.team-member p:last-child {
+    color: #666;
+    line-height: 1.6;
+}
+
+.accreditation {
+    background-color: #1C2C4C;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.accreditation-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.accreditation-content p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+}
+
+.accreditation-badges {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.badge h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.badge p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+/* Healthcare Professionals page styles */
+.our-team {
+    background-color: #f8f9fa;
+}
+
+.team-header h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.team-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.team-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.team-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.team-card h3 {
+    color: #1C2C4C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.team-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.referral-process {
+    background-color: #ffffff;
+}
+
+.referral-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.referral-content p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 2rem;
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background-color: #1C2C4C;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1.5rem auto;
+}
+
+.step h3 {
+    color: #1C2C4C;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.step p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.eligibility-criteria {
+    background-color: #f8f9fa;
+}
+
+.eligibility-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.eligibility-content p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.criteria-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.criteria-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.criteria-card h3 {
+    color: #1C2C4C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.criteria-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.criteria-card li {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.criteria-card li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #2F7D7C;
+    font-weight: bold;
+}
+
+.professional-resources {
+    background-color: #ffffff;
+}
+
+.resources-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.resources-content p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.resource-card {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.resource-card h3 {
+    color: #1C2C4C;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.resource-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Services page styles */
+.services-header h2 {
+    color: #ffffff;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.services-header p {
+    font-size: 1.2rem;
+    color: #ffffff;
+    line-height: 1.7;
+}
+
+.service-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #1C2C4C;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.service-card ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.service-card li {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.service-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2F7D7C;
+    font-weight: bold;
+}
+
+.specialized-content h2,
+.care-team h2,
+.coverage-content h2 {
+    color: #1C2C4C;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.specialized-content p,
+.care-team p,
+.coverage-content p {
+    font-size: 1.2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.specialized-grid,
+.role-grid,
+.coverage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.specialized-card,
+.role-card,
+.coverage-card {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid #e9ecef;
+}
+
+.specialized-card h3,
+.role-card h3,
+.coverage-card h3 {
+    color: #1C2C4C;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.specialized-card p,
+.role-card p,
+.coverage-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for new pages */
+@media (max-width: 768px) {
+    .our-story,
+    .mission-values,
+    .leadership-team,
+    .accreditation,
+    .our-team,
+    .referral-process,
+    .eligibility-criteria,
+    .professional-resources,
+    .core-services,
+    .specialized-services,
+    .care-team,
+    .coverage-payment {
+        padding: 2rem 1rem;
+    }
+    
+    .our-story {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .story-image {
+        order: -1;
+    }
+    
+    .story-image img {
+        height: 300px;
+    }
+    
+    .about-hero__content h1,
+    .healthcare-hero__content h1,
+    .services-hero__content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .values-grid,
+    .team-grid,
+    .process-steps,
+    .criteria-grid,
+    .resources-grid,
+    .specialized-grid,
+    .role-grid,
+    .coverage-grid {
+        grid-template-columns: 1fr;
     }
 }

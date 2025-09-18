@@ -51,17 +51,70 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//for testimonials 
-
+// Testimonials Carousel
 document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.testimonial-carousel');
+    if (!carousel) return;
 
-    const carousel = document.getElementById('.testimonial-carousel');
     const wrapper = carousel.querySelector('.carousel-wrapper');
     const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
     const nextButton = carousel.querySelector('.next-button');
-    const prevButton = carousel.querySelector('.prevButton');
+    const prevButton = carousel.querySelector('.prev-button');
     const dotsContainer = carousel.querySelector('.carousel-dots');
 
+    let currentSlide = 0;
+    const totalSlides = slides.length;
 
+    // Create dots
+    function createDots() {
+        dotsContainer.innerHTML = '';
+        for (let i = 0; i < totalSlides; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'dot';
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i));
+            dotsContainer.appendChild(dot);
+        }
+    }
 
+    // Update carousel position
+    function updateCarousel() {
+        const translateX = -currentSlide * 100;
+        wrapper.style.transform = `translateX(${translateX}%)`;
+        
+        // Update dots
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentSlide);
+        });
+    }
+
+    // Go to specific slide
+    function goToSlide(slideIndex) {
+        currentSlide = slideIndex;
+        updateCarousel();
+    }
+
+    // Next slide
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }
+
+    // Previous slide
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    }
+
+    // Event listeners
+    if (nextButton) nextButton.addEventListener('click', nextSlide);
+    if (prevButton) prevButton.addEventListener('click', prevSlide);
+
+    // Initialize
+    createDots();
+    updateCarousel();
+
+    // Auto-advance (optional)
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
 });
