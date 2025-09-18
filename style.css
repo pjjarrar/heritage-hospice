@@ -799,6 +799,11 @@ body {
     min-width: 200px;
 }
 
+.resources-content .family-resources-list {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
 /* Testimonials Section */
 .testimonials {
     padding: 4rem 1rem;
@@ -846,6 +851,101 @@ body {
     color: #1C2C4C;
     font-weight: 600;
     font-size: 1rem;
+}
+
+.testimonial-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 90%;
+    background-color: white;
+    overflow: hidden;
+    position: relative;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.carousel-slide blockquote {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #333;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+}
+
+.carousel-slide cite {
+    font-weight: bold;
+    font-style: normal;
+    color: #283a51;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #333;
+    transition: all 0.2s ease;
+    z-index: 10;
+}
+
+.carousel-button:hover {
+    background-color: #283a51;
+    color: white;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Container for the navigation dots at the bottom. */
+.carousel-dots {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #d0d0d0;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+/* The 'active' class highlights the dot for the current slide. */
+.dot.active {
+    background-color: #283a51;
+}
+
+.carousel-button {
+    /* position: absolute; */
 }
 
 /* Contact Section */
