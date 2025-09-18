@@ -47,7 +47,8 @@ body {
     left: 0;
     right: 0;
     border: none;
-    border-top: 1px solid #e2e6ef;
+    border-top: 1px solid;
+    border-top-color: rgba(28, 44, 76, 0.3);
     z-index: 1050;
     transition: border-color 0.3s ease;
     margin: 0;
@@ -106,7 +107,7 @@ body {
 }
 
 .logo img {
-    height: 200px;
+    height: 150px;
     width: auto;
     transition: height 0.3s ease, filter 0.3s ease;
 }
@@ -215,9 +216,13 @@ body {
 .hero-section {
     display: flex;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 120px);
     padding: 0 1rem;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    background: url('assets/watercolor-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     margin-top: 120px;
     /* max-width: 1400px; */
     margin-left: auto;
@@ -317,8 +322,65 @@ body {
     transform: scale(1.02);
 }
 
+/* Contact Hero */
+.contact-hero {
+    position: relative;
+    width: 100%;
+    min-height: 340px;
+    background-image: url('assets/contact-us2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(28, 44, 76, 0.55);
+}
+
+.contact-hero__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem 6rem 1rem; /* extra bottom space to clear curve */
+}
+
+.contact-hero__content h1 {
+    color: #ffffff;
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+/* angled slice */
+.contact-hero::after { content: none; }
+
+.contact-hero__curve {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    line-height: 0;
+    z-index: 1;
+}
+
+.contact-hero__curve svg {
+    display: block;
+    width: 100%;
+    height: 160px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .contact-hero__content h1 {
+        font-size: 2.2rem;
+    }
+    .contact-hero__curve svg {
+        height: 120px;
+    }
     .nav-bar {
         padding: 0.6rem 1rem;
         flex-wrap: wrap;
@@ -374,14 +436,11 @@ body {
         flex-direction: column;
         text-align: center;
         padding: 1rem;
-        margin-top: 60px;
+        margin-top: 100px;
+        min-height: calc(100vh - 80px);
         max-width: none;
         margin-left: 0;
         margin-right: 0;
-    }
-
-    .hero-section {
-        margin-top: 120px;
     }
     
     .hero-container {
@@ -411,6 +470,9 @@ body {
 
 /* Tablet breakpoint */
 @media (max-width: 1024px) {
+    .hero-section {
+        min-height: 70vh;
+    }
     .nav-menu {
         gap: 1.5rem;
     }
@@ -552,6 +614,12 @@ body {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     object-fit: cover;
 }
+
+.what-is-hospice .hospice-list {
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
 
 /* Hospice Services Section */
 .hospice-services {
@@ -829,6 +897,15 @@ body {
     align-items: center;
 }
 
+.map-embed {
+    width: 100%;
+    max-width: 550px;
+    height: 360px;
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
 .map-placeholder {
     background: #f8f9fa;
     padding: 3rem;
@@ -972,6 +1049,10 @@ body {
     .resources-content {
         max-width: 100%;
         text-align: center;
+    }
+
+    .hospice-content .hospice-list{
+        text-align: left;
     }
     
     .hospice-content .request-care-btn,
